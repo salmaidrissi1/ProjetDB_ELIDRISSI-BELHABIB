@@ -113,7 +113,6 @@ Il contient :
 - les cardinalités.
 
 Image du MCD:
-![MCD Wedding Planner](mcd_wedding_planner.png)
 
 # 7) Outils utilisés
 Les outils suivants ont été utilisés :
@@ -121,7 +120,22 @@ Les outils suivants ont été utilisés :
 - Looping (modélisation MERISE)
 - GitHub (gestion du projet)
 - Intelligence Artificielle Générative (ChatGPT)
-- 
-  # 8) Fichiers fournis
-Le dépôt contient les fichiers suivants :
 
+   # 8) Fichiers fournis
+Le dépôt contient les fichiers suivants :
+- Mini-Projet_Partie1.zip  
+   Archive contenant les fichiers source du projet.
+ Prompt_Projet_Wedding.txt
+   Prompt utilisé pour générer les règles métier et le dictionnaire de données.
+- wedding_planner.loo  
+  Fichier source Looping contenant le Modèle Conceptuel de Donnée
+- mcd_wedding_planner.png
+   Image du Modèle Conceptuel de Données réalisée avec Looping.
+  - README.md
+   Documentation complète du projet.
+
+  # 10) Conclusion
+
+  Ce projet a permis d’appliquer la méthode MERISE afin de concevoir le Modèle Conceptuel de Données d’un système d’information dédié à la gestion des mariages pour une agence de wedding planner.
+  L’analyse des besoins a permis d’identifier les entités principales du système, les relations entre elles ainsi que les règles métier associées. Un dictionnaire de données structuré a également été défini afin de préparer la conception de la base de données relationnelle.
+  Le Modèle Conceptuel de Données réalisé constitue une étape essentielle dans le processus de conception d’un système d’information. Il servira de base pour les prochaines étapes du projet, notamment la création du Modèle Logique de Données (MLD) et l’implémentation de la base de données dans un système de gestion de bases de données relationnelles tel que MySQL.
