@@ -131,3 +131,14 @@ Il contient :
 
 Image du MCD:
 ![MCD Wedding Planner](mcd_wedding_planner.png)
+
+# 7) Outils utilisés
+Les outils suivants ont été utilisés :
+
+- Looping (modélisation MERISE)
+- GitHub (gestion du projet)
+- Intelligence Artificielle Générative (ChatGPT)
+- 
+  # 8) Fichiers fournis
+Le dépôt contient les fichiers suivants :
+
