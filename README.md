@@ -40,28 +40,11 @@ Le modèle respectera les règles de normalisation (3ème forme normale) afin d�
 
 
 # 3) Prompt final utilisé
-Tu travailles dans le domaine de l’organisation de mariages (Wedding Planning).
-Ton entreprise est une agence de wedding planner spécialisée dans l’accompagnement de couples pour la planification et l’organisation complète de leur mariage.
-Cette agence organise et coordonne différents aspects du mariage, notamment :
 
-la gestion des clients,
-la gestion des mariages,
-la réservation des lieux,
-la gestion des prestataires,
-la gestion des invités,
-la planification des prestations.
-
-Ce système est similaire à celui utilisé par des plateformes telles que :
-https://www.zankyou.fr
-https://www.mariages.net
-
-Ton agence veut appliquer MERISE pour concevoir un système d'information.
-D’abord, établis les règles de gestion des données.
-Ensuite, fournis un dictionnaire de données contenant entre 25 et 35 données.
-Fournis donc les règles de gestion et le dictionnaire de données.
+Le prompt utilisé pour générer les règles métier et le dictionnaire de données est disponible dans le fichier :
+Prompt_Projet_Wedding.txt
 
 # 4) Règles métier
-
 Les règles métier suivantes ont été identifiées :
 
 - Un client peut organiser plusieurs mariages.
