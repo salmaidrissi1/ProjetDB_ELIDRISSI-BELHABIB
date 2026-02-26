@@ -129,5 +129,5 @@ Il contient :
 - les attributs,
 - les cardinalités.
 
-Image du MCD :![MCD Wedding Planner](png looping wedding planner.png)
+Image du MCD: ![MCD Wedding Planner](mcd_wedding_planner.png)
 
