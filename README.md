@@ -3,7 +3,7 @@
 
 # 1) Présentation du domaine
 
-Ce projet concerne le domaine de l’organisation de mariages (*Wedding Planning*).  
+Ce projet concerne le domaine de l’organisation de mariages (*Wedding Planning*) 
 Une agence de wedding planner accompagne des couples dans la planification, l’organisation et la gestion complète de leur mariage.
 
 L’agence est responsable de plusieurs aspects importants :
