@@ -133,7 +133,7 @@ Le dépôt contient les fichiers suivants :
   Fichier source Looping contenant le Modèle Conceptuel de Donnée
 - mcd_wedding_planner.png
    Image du Modèle Conceptuel de Données réalisée avec Looping.
-  - README.md
+- README.md
    Documentation complète du projet.
 
   # 10) Conclusion
