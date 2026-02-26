@@ -47,23 +47,24 @@ Le prompt utilisé pour générer les règles métier et le dictionnaire de donn
 # 4) Règles métier
 Les règles métier suivantes ont été identifiées :
 
-- Un client peut organiser plusieurs mariages.
+- Un client peut organiser 0, 1 ou plusieurs mariages.
 - Un mariage est organisé par un seul client.
 - Un mariage se déroule dans un seul lieu.
-- Un lieu peut accueillir plusieurs mariages.
-- Un mariage peut avoir plusieurs prestataires.
-- Un prestataire peut intervenir dans plusieurs mariages.
-- Un mariage possède plusieurs invités.
+- Un lieu peut accueillir 0, 1 ou plusieurs mariages, à des dates différentes.
+- Un mariage peut faire appel à 0, 1 ou plusieurs prestataires.
+- Un prestataire peut intervenir dans 0, 1 ou plusieurs mariages.
+- Pour chaque couple (mariage, prestataire), un coût négocié est enregistré.
+- Un mariage possède un ou plusieurs invités.
 - Un invité appartient à un seul mariage.
-- Chaque invité possède un statut RSVP.
-- Un prestataire possède un coût négocié pour un mariage.
-- Un prestataire peut être planifié sur un créneau horaire.
+- Chaque invité possède un statut RSVP (oui, non ou en attente).
 - Chaque créneau possède une heure de début et une heure de fin.
+- La planification d’une prestation relie un mariage, un prestataire et un créneau horaire.
 - Un invité peut accompagner un autre invité (association récursive).
 - Chaque mariage possède une date.
 - Chaque mariage possède un budget.
 - Chaque prestataire possède un type de prestation.
 - Chaque lieu possède une capacité maximale.
+- Le nombre d’invités d’un mariage ne doit pas dépasser la capacité du lieu.
  
   # 5) Dictionnaire de données
 Le tableau suivant présente le dictionnaire de données du système Wedding Planner :
