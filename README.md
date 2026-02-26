@@ -67,7 +67,7 @@ Les règles métier suivantes ont été identifiées :
 - Un créneau horaire appartient à un seul mariage.
 - Un prestataire peut être planifié sur un créneau horaire pour un mariage donné.
  
-  # 5) Dictionnaire de données
+
 Le tableau suivant présente le dictionnaire de données du système Wedding Planner :
 | Entité      | Nom de la donnée | Signification                               | Type    | Taille |
 | ----------- | ---------------- | ------------------------------------------- | ------- | ------ |
@@ -77,7 +77,7 @@ Le tableau suivant présente le dictionnaire de données du système Wedding Pla
 | CLIENT      | email            | Adresse email du client                     | Texte   | 100    |
 | CLIENT      | telephone        | Numéro de téléphone du client               | Texte   | 20     |
 | MARIAGE     | id_mariage       | Identifiant unique du mariage               | Entier  | 11     |
-| MARIAGE     | date_mariage     | Date du mariage                             | Date    | —      
+| MARIAGE     | date_mariage     | Date du mariage                             | Date    | —      |
 | MARIAGE     | budget           | Budget du mariage                           | Décimal | 10,2   |
 | MARIAGE     | statut           | Statut du mariage (prévu, terminé, etc.)    | Texte   | 20     |
 | LIEU        | id_lieu          | Identifiant unique du lieu                  | Entier  | 11     |
