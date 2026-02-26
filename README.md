@@ -131,4 +131,3 @@ Il contient :
 
 Image du MCD:
 ![MCD Wedding Planner](mcd_wedding_planner.png)
-
