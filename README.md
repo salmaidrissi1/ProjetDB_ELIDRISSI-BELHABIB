@@ -21,7 +21,7 @@ Afin de gérer efficacement toutes ces informations, il est nécessaire de conce
 
 La conception de cette base de données est réalisée en utilisant la méthode MERISE, à travers la création d’un Modèle Conceptuel de Données (MCD).
 
----
+
 
 # 2) Objectif du mini-projet
 
@@ -35,9 +35,9 @@ Plus précisément, ce projet consiste à :
 - construire un Modèle Conceptuel de Données (MCD),
 - préparer la future implémentation dans une base de données relationnelle.
 
-Le modèle doit respecter les règles de normalisation (3ème forme normale) afin d’éviter les redondances et garantir la cohérence des données.
+Le modèle respectera les règles de normalisation (3ème forme normale) afin d’éviter les redondances et garantir la cohérence des données.
 
----
+
 
 # 3) Prompt final utilisé
 Tu travailles dans le domaine de l’organisation de mariages (Wedding Planning).
@@ -82,7 +82,7 @@ Les règles métier suivantes ont été identifiées :
 - Chaque prestataire possède un type de prestation.
 - Chaque lieu possède une capacité maximale.
  
-  ## 5) Dictionnaire de données
+  # 5) Dictionnaire de données
 Le tableau suivant présente le dictionnaire de données du système Wedding Planner.
 | Entité      | Nom de la donnée | Signification                               | Type    | Taille |
 | ----------- | ---------------- | ------------------------------------------- | ------- | ------ |
