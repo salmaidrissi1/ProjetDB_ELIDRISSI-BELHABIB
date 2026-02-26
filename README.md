@@ -127,13 +127,13 @@ Les outils suivants ont été utilisés :
 
    # 8) Fichiers fournis
 Le dépôt contient les fichiers suivants :
-- Mini-Projet_Partie1.zip  
+- Mini-Projet_Partie1.zip
    Archive contenant les fichiers source du projet.
  Prompt_Projet_Wedding.txt
    Prompt utilisé pour générer les règles métier et le dictionnaire de données.
-- wedding_planner.loo  
-  Fichier source Looping contenant le Modèle Conceptuel de Donnée
-- mcd_wedding_planner.png
+- mcd projet.loo  
+  Fichier source Looping contenant le Modèle Conceptuel de Donnée.
+- mcd.png
    Image du Modèle Conceptuel de Données réalisée avec Looping.
 - README.md
    Documentation complète du projet.
