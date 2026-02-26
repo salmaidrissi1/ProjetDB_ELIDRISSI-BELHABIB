@@ -42,7 +42,7 @@ Le modèle respectera les règles de normalisation (3ème forme normale) afin d�
 # 3) Prompt final utilisé
 
 Le prompt utilisé pour générer les règles métier et le dictionnaire de données est disponible dans le fichier :
-Prompt_Projet_Wedding.txt
+[Prompt_Projet_Wedding.txt](Prompt_Projet_Wedding.txt)
 
 # 4) Règles métier
 Les règles métier suivantes ont été identifiées :
