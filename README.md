@@ -83,7 +83,7 @@ Les règles métier suivantes ont été identifiées :
 - Chaque lieu possède une capacité maximale.
  
   # 5) Dictionnaire de données
-Le tableau suivant présente le dictionnaire de données du système Wedding Planner.
+Le tableau suivant présente le dictionnaire de données du système Wedding Planner :
 | Entité      | Nom de la donnée | Signification                               | Type    | Taille |
 | ----------- | ---------------- | ------------------------------------------- | ------- | ------ |
 | CLIENT      | id_client        | Identifiant unique du client                | Entier  | 11     |
