@@ -1,6 +1,5 @@
 # Mini-Projet Base de Données — Wedding Planner (Partie 1)
 
----
 
 # 1) Présentation du domaine
 
