@@ -5,7 +5,7 @@ CREATE TABLE client(
    email VARCHAR(50),
    telephone INT,
    PRIMARY KEY(id_client)
-);
+); 
 
 CREATE TABLE Lieu(
    id_lieu INT,
