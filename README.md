@@ -1,6 +1,7 @@
 # Mini-Projet Base de Données — Wedding Planner (Partie 1)
 
 
+
 # 1) Présentation du domaine
 
 Ce projet concerne le domaine de l’organisation de mariages (*Wedding Planning*) 
