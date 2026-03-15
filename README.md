@@ -170,7 +170,7 @@ affecter = (#id_mariage, #id_prestataire, cout_negocie DECIMAL(10,2));
 
 planifier = (#id_creneau, description VARCHAR(50), #id_mariage, #id_prestataire);
 
-![MCD](mld.jpg)
+![MCD](mld.png)
 
 
 
