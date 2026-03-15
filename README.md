@@ -165,8 +165,9 @@ Mariage = (id_mariage INT, date_mariage DATE, budget DECIMAL(15,2), statut VARCH
 
 Invite = (id_invite INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50), telephone INT, rsvp VARCHAR(50), #id_invite_1*, #id_mariage);
 
-affecter = (#id_mariage, #id_prestataire);
+affecter = (#id_mariage, #id_prestataire, cout_negocie DECIMAL(10,2));
 
 planifier = (#id_creneau, description VARCHAR(50), #id_mariage, #id_prestataire);
+
 
 
