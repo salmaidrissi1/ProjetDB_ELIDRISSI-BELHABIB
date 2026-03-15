@@ -154,11 +154,18 @@ Troisième étape : MLD et MPD
 3) A. MLD
 
 client = (id_client INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50), telephone INT);
+
 Lieu = (id_lieu INT, nom_lieu VARCHAR(50), adresse VARCHAR(50), capacite INT, prix_location DECIMAL(15,2));
+
 Prestataire = (id_prestataire INT, email VARCHAR(50), telephone VARCHAR(50), nom VARCHAR(50), type_prestataire VARCHAR(50));
+
 Creneau = (id_creneau INT, heure_debut TIME, heure_fin TIME);
+
 Mariage = (id_mariage INT, date_mariage DATE, budget DECIMAL(15,2), statut VARCHAR(50), #id_lieu, #id_client);
+
 Invite = (id_invite INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50), telephone INT, rsvp VARCHAR(50), #id_invite_1*, #id_mariage);
+
 affecter = (#id_mariage, #id_prestataire);
+
 planifier = (#id_creneau, description VARCHAR(50), #id_mariage, #id_prestataire);
 
