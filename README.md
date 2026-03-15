@@ -14,7 +14,7 @@ L’agence est responsable de plusieurs aspects importants :
 - la réservation des lieux de réception,
 - la gestion des prestataires (DJ, traiteur, photographe, etc.),
 - la gestion des invités,
-- la planification des prestations,
+- la planification des prestations, 
 - la gestion des créneaux horaires,
 - le suivi des coûts et du budget.
 
