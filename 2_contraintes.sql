@@ -26,7 +26,7 @@ CHECK (prix_location >= 0);
 ALTER TABLE Creneau
 ADD CONSTRAINT chk_heure
 CHECK (heure_fin > heure_debut);
- 
+  
 
 /* ===== Contraintes RSVP pour les invités ===== */
 
