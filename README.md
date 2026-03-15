@@ -160,7 +160,7 @@ Lieu = (id_lieu INT, nom_lieu VARCHAR(50), adresse VARCHAR(50), capacite INT, pr
 
 Prestataire = (id_prestataire INT, email VARCHAR(50), telephone INT, nom VARCHAR(50), type_prestataire VARCHAR(50));
 
-Creneau = (id_creneau INT, heure_debut TIME, heure_fin TIME);
+Creneau = (id_creneau INT, heure_debut TIME, heure_fin TIME); 
 
 Mariage = (id_mariage INT, date_mariage DATE, budget DECIMAL(15,2), statut VARCHAR(50), #id_lieu, #id_client);
 
