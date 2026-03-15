@@ -1,5 +1,5 @@
 /* ===== Contraintes sur les mariages ===== */
-
+ 
 ALTER TABLE Mariage
 ADD CONSTRAINT chk_budget
 CHECK (budget >= 0);
