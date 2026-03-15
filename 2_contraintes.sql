@@ -15,6 +15,7 @@ ALTER TABLE Lieu
 ADD CONSTRAINT chk_capacite
 CHECK (capacite > 0);
 
+
 ALTER TABLE Lieu
 ADD CONSTRAINT chk_prix_location
 CHECK (prix_location >= 0);
