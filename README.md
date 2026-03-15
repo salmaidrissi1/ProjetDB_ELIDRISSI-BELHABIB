@@ -157,7 +157,7 @@ client = (id_client INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50),
 
 Lieu = (id_lieu INT, nom_lieu VARCHAR(50), adresse VARCHAR(50), capacite INT, prix_location DECIMAL(15,2));
 
-Prestataire = (id_prestataire INT, email VARCHAR(50), telephone VARCHAR(50), nom VARCHAR(50), type_prestataire VARCHAR(50));
+Prestataire = (id_prestataire INT, email VARCHAR(50), telephone INT, nom VARCHAR(50), type_prestataire VARCHAR(50));
 
 Creneau = (id_creneau INT, heure_debut TIME, heure_fin TIME);
 
@@ -168,4 +168,5 @@ Invite = (id_invite INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50),
 affecter = (#id_mariage, #id_prestataire);
 
 planifier = (#id_creneau, description VARCHAR(50), #id_mariage, #id_prestataire);
+
 
