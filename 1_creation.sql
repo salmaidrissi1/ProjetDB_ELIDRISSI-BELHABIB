@@ -6,7 +6,7 @@ CREATE TABLE client(
    telephone INT,
    PRIMARY KEY(id_client)
 ); 
-
+   
 CREATE TABLE Lieu(
    id_lieu INT, 
    nom_lieu VARCHAR(50),
