@@ -143,3 +143,22 @@ Le dépôt contient les fichiers suivants :
   Ce projet a permis d’appliquer la méthode MERISE afin de concevoir le Modèle Conceptuel de Données d’un système d’information dédié à la gestion des mariages pour une agence de wedding planner.
   L’analyse des besoins a permis d’identifier les entités principales du système, les relations entre elles ainsi que les règles métier associées. Un dictionnaire de données structuré a également été défini afin de préparer la conception de la base de données relationnelle.
   Le Modèle Conceptuel de Données réalisé constitue une étape essentielle dans le processus de conception d’un système d’information. Il servira de base pour les prochaines étapes du projet, notamment la création du Modèle Logique de Données (MLD) et l’implémentation de la base de données dans un système de gestion de bases de données relationnelles tel que MySQL.
+
+
+
+
+# Mini-Projet Base de Données — Wedding Planner (Partie 2) 
+
+Troisième étape : MLD et MPD
+
+3) A. MLD
+
+client = (id_client INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50), telephone INT);
+Lieu = (id_lieu INT, nom_lieu VARCHAR(50), adresse VARCHAR(50), capacite INT, prix_location DECIMAL(15,2));
+Prestataire = (id_prestataire INT, email VARCHAR(50), telephone VARCHAR(50), nom VARCHAR(50), type_prestataire VARCHAR(50));
+Creneau = (id_creneau INT, heure_debut TIME, heure_fin TIME);
+Mariage = (id_mariage INT, date_mariage DATE, budget DECIMAL(15,2), statut VARCHAR(50), #id_lieu, #id_client);
+Invite = (id_invite INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50), telephone INT, rsvp VARCHAR(50), #id_invite_1*, #id_mariage);
+affecter = (#id_mariage, #id_prestataire);
+planifier = (#id_creneau, description VARCHAR(50), #id_mariage, #id_prestataire);
+
