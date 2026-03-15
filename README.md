@@ -9,7 +9,7 @@ Une agence de wedding planner accompagne des couples dans la planification, l’
 
 L’agence est responsable de plusieurs aspects importants : 
 
-- la gestion des clients (les couples),
+ - la gestion des clients (les couples),
 - l’organisation des mariages, 
 - la réservation des lieux de réception,
 - la gestion des prestataires (DJ, traiteur, photographe, etc.),
