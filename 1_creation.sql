@@ -23,7 +23,7 @@ CREATE TABLE Prestataire(
    nom VARCHAR(50),
    type_prestataire VARCHAR(50),
    PRIMARY KEY(id_prestataire)
-);
+); 
 
 CREATE TABLE Creneau(
    id_creneau INT,
