@@ -8,7 +8,7 @@ CREATE TABLE client(
 ); 
 
 CREATE TABLE Lieu(
-   id_lieu INT,
+   id_lieu INT, 
    nom_lieu VARCHAR(50),
    adresse VARCHAR(50),
    capacite INT,
