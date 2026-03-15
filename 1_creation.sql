@@ -96,7 +96,7 @@ CREATE TABLE planifier(
    description VARCHAR(50),
    id_mariage INT NOT NULL,
    id_prestataire INT NOT NULL,
-
+   
    PRIMARY KEY(id_creneau, id_mariage, id_prestataire),
 
    FOREIGN KEY(id_creneau)
