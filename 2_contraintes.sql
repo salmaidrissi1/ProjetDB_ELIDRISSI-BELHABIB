@@ -4,7 +4,7 @@ ALTER TABLE Mariage
 ADD CONSTRAINT chk_budget
 CHECK (budget >= 0);
 
-ALTER TABLE Mariage
+ALTER TABLE Mariage 
 ADD CONSTRAINT chk_statut
 CHECK (statut IN ('prévu','en cours','terminé','annulé'));
 
