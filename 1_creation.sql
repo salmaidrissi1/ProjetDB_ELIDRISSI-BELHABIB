@@ -75,7 +75,7 @@ CREATE TABLE Invite(
 );
 
 CREATE TABLE affecter(
-   id_mariage INT,
+   id_mariage INT, 
    id_prestataire INT,
    cout_negocie DECIMAL(10,2),
    PRIMARY KEY(id_mariage, id_prestataire),
