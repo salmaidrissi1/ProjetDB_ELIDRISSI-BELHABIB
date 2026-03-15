@@ -46,6 +46,7 @@ CREATE TABLE Mariage(
    ON DELETE CASCADE
    ON UPDATE CASCADE,
 
+
    FOREIGN KEY(id_client)
    REFERENCES client(id_client)
    ON DELETE CASCADE
