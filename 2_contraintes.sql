@@ -55,7 +55,7 @@ CHECK (telephone > 0);
 ALTER TABLE Prestataire
 ADD CONSTRAINT chk_tel_prestataire
 CHECK (telephone > 0);
-
+ 
 ALTER TABLE Invite
 ADD CONSTRAINT chk_tel_invite
 CHECK (telephone > 0);
