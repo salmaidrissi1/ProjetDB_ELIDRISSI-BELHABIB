@@ -1,4 +1,4 @@
-
+ 
 -- ============================================================
 -- 3_insertion.sql
 -- Wedding Planner — Insertion des données
