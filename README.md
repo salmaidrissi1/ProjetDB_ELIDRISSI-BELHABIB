@@ -117,7 +117,7 @@ Il contient :
 
 Image du MCD:
 
-![MCD](mcdprojet.jpg)
+![MCD](mcd.png)
 
 # 7) Outils utilisés
 Les outils suivants ont été utilisés :
