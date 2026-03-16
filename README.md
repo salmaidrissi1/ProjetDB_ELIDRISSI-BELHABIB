@@ -172,6 +172,17 @@ planifier = (#id_mariage, #id_prestataire, #id_creneau, description VARCHAR(150)
 
 ![MCD](mld.png)
 
+# Scénario d'utilisation :
+
+Coordinatrice de l'agence "Mariage Étoile"
+La base de données est utilisée par la coordinatrice de l'agence de wedding planning. Son rôle est d'assurer le suivi opérationnel de l'ensemble des mariages organisés par l'agence.
+Dans le cadre de son travail quotidien, elle est amenée à extraire différentes informations de la base de données :
+
+Suivi des clients et des mariages : consulter la liste des clients, filtrer les mariages par budget ou par période, identifier les mariages à venir pour la saison estivale.
+Gestion des invités : vérifier les confirmations de présence, préparer les listes pour les plans de table, identifier les invités avec accompagnant.
+Suivi des prestataires : identifier les prestataires disponibles par type de prestation, suivre les coûts négociés, repérer les prestataires les plus sollicités.
+Planification : vérifier les créneaux horaires attribués à chaque prestataire pour chaque mariage, détecter les prestataires sans créneau défini.
+Statistiques pour la direction : calculer les budgets moyens, total des dépenses prestataires par mariage, budget restant, répartition des réponses RSVP.
 
 
 
