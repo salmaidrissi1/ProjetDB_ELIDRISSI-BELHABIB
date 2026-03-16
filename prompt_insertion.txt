@@ -40,7 +40,7 @@ Les clés primaires correspondent aux id, sauf si autre chose est précisé (qua
 Les clés étrangères sont identifiées par les #, et ont le même nom que les clés primaires auxquelles elles font référence.
 
 Nombre de lignes souhaitées :
-- CLIENT : 10 lignes
+- CLIENT : 10 lignes    
 - LIEU : 8 lignes
 - PRESTATAIRE : 12 lignes
 - MARIAGE : 15 lignes
