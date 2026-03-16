@@ -1,109 +1,92 @@
-CREATE TABLE client(
+
+CREATE TABLE CLIENT(
    id_client INT,
-   nom VARCHAR(50),
-   prenom VARCHAR(50),
-   email VARCHAR(50),
-   telephone INT,
+   nom VARCHAR(50) NOT NULL,
+   prenom VARCHAR(50) NOT NULL,
+   email VARCHAR(100) NOT NULL UNIQUE,
+   telephone VARCHAR(20),
    PRIMARY KEY(id_client)
-); 
-   
-CREATE TABLE Lieu(
-   id_lieu INT, 
-   nom_lieu VARCHAR(50),
-   adresse VARCHAR(50),
-   capacite INT,
-   prix_location DECIMAL(15,2),
+);
+
+CREATE TABLE LIEU(
+   id_lieu INT,
+   nom_lieu VARCHAR(50) NOT NULL,
+   adresse VARCHAR(50) NOT NULL,
+   capacite INT NOT NULL,
+   prix_location DECIMAL(10,2) NOT NULL,
    PRIMARY KEY(id_lieu)
 );
 
-CREATE TABLE Prestataire(
+CREATE TABLE PRESTATAIRE(
    id_prestataire INT,
-   email VARCHAR(50),
-   telephone INT,
-   nom VARCHAR(50),
-   type_prestataire VARCHAR(50),
+   nom VARCHAR(50) NOT NULL,
+   type_prestataire VARCHAR(50) NOT NULL,
+   email VARCHAR(100) NOT NULL UNIQUE,
+   telephone VARCHAR(20),
    PRIMARY KEY(id_prestataire)
-); 
-
-CREATE TABLE Creneau(
-   id_creneau INT,
-   heure_debut TIME,
-   heure_fin TIME,
-   PRIMARY KEY(id_creneau)
 );
 
-CREATE TABLE Mariage(
+CREATE TABLE MARIAGE(
    id_mariage INT,
-   date_mariage DATE,
-   budget DECIMAL(15,2),
-   statut VARCHAR(50),
+   date_mariage DATE NOT NULL,
+   budget DECIMAL(10,2) NOT NULL,
+   statut VARCHAR(50) NOT NULL DEFAULT 'prévu',
    id_lieu INT NOT NULL,
    id_client INT NOT NULL,
    PRIMARY KEY(id_mariage),
-
-   FOREIGN KEY(id_lieu)
-   REFERENCES Lieu(id_lieu)
-   ON DELETE CASCADE
-   ON UPDATE CASCADE,
-
-   FOREIGN KEY(id_client)
-   REFERENCES client(id_client)
-   ON DELETE CASCADE
-   ON UPDATE CASCADE
+   FOREIGN KEY(id_lieu) REFERENCES LIEU(id_lieu)
+      ON UPDATE CASCADE ON DELETE RESTRICT,
+   FOREIGN KEY(id_client) REFERENCES CLIENT(id_client)
+      ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
-CREATE TABLE Invite(
+CREATE TABLE CRENEAU(
+   id_creneau INT,
+   heure_debut TIME NOT NULL,
+   heure_fin TIME NOT NULL,
+   id_mariage INT NOT NULL,
+   PRIMARY KEY(id_creneau),
+   FOREIGN KEY(id_mariage) REFERENCES MARIAGE(id_mariage)
+      ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE INVITE(
    id_invite INT,
-   nom VARCHAR(50),
-   prenom VARCHAR(50),
-   email VARCHAR(50),
-   telephone INT,
-   rsvp VARCHAR(50),
-   id_invite_1 INT,
+   nom VARCHAR(50) NOT NULL,
+   prenom VARCHAR(50) NOT NULL,
+   email VARCHAR(100),
+   telephone VARCHAR(20),
+   rsvp VARCHAR(50) NOT NULL DEFAULT 'en attente',
+   id_invite_1 INT DEFAULT NULL,
    id_mariage INT NOT NULL,
    PRIMARY KEY(id_invite),
-
-   FOREIGN KEY(id_invite_1)
-   REFERENCES Invite(id_invite)
-   ON DELETE SET NULL
-   ON UPDATE CASCADE,
-
-   FOREIGN KEY(id_mariage)
-   REFERENCES Mariage(id_mariage)
-   ON DELETE CASCADE
-   ON UPDATE CASCADE
+   FOREIGN KEY(id_invite_1) REFERENCES INVITE(id_invite)
+      ON UPDATE CASCADE ON DELETE SET NULL,
+   FOREIGN KEY(id_mariage) REFERENCES MARIAGE(id_mariage)
+      ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE affecter(
-   id_mariage INT, 
+   id_mariage INT,
    id_prestataire INT,
-   cout_negocie DECIMAL(10,2),
+   cout_negocie DECIMAL(10,2) NOT NULL,
    PRIMARY KEY(id_mariage, id_prestataire),
-
-   FOREIGN KEY(id_mariage)
-   REFERENCES Mariage(id_mariage)
-   ON DELETE CASCADE
-   ON UPDATE CASCADE,
-
-   FOREIGN KEY(id_prestataire)
-   REFERENCES Prestataire(id_prestataire)
-   ON DELETE CASCADE
-   ON UPDATE CASCADE
+   FOREIGN KEY(id_mariage) REFERENCES MARIAGE(id_mariage)
+      ON UPDATE CASCADE ON DELETE CASCADE,
+   FOREIGN KEY(id_prestataire) REFERENCES PRESTATAIRE(id_prestataire)
+      ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE planifier(
    id_mariage INT,
    id_prestataire INT,
    id_creneau INT,
-   description VARCHAR(50),
-   PRIMARY KEY(id_mariage, id_prestataire),
-   FOREIGN KEY(id_mariage) REFERENCES Mariage(id_mariage)
-      ON DELETE CASCADE
-      ON UPDATE CASCADE,
-   FOREIGN KEY(id_prestataire) REFERENCES Prestataire(id_prestataire)
-      ON DELETE CASCADE
-      ON UPDATE CASCADE,
-   FOREIGN KEY(id_creneau) REFERENCES Creneau(id_creneau)
-      ON DELETE SET NULL
-      ON UPDATE CASCADE
+   description VARCHAR(150),
+   PRIMARY KEY(id_mariage, id_prestataire, id_creneau),
+   FOREIGN KEY(id_mariage) REFERENCES MARIAGE(id_mariage)
+      ON UPDATE CASCADE ON DELETE CASCADE,
+   FOREIGN KEY(id_prestataire) REFERENCES PRESTATAIRE(id_prestataire)
+      ON UPDATE CASCADE ON DELETE CASCADE,
+   FOREIGN KEY(id_creneau) REFERENCES CRENEAU(id_creneau)
+      ON UPDATE CASCADE ON DELETE CASCADE
 );
