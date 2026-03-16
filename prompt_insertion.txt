@@ -1,0 +1,56 @@
+Donne les requêtes d'insertion permettant de remplir la base de données dont le modèle relationnel est le suivant :
+
+CLIENT (id_client INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(100), telephone VARCHAR(20))
+    Clé primaire : id_client
+
+LIEU (id_lieu INT, nom_lieu VARCHAR(50), adresse VARCHAR(50), capacite INT, prix_location DECIMAL(10,2))
+    Clé primaire : id_lieu
+
+PRESTATAIRE (id_prestataire INT, nom VARCHAR(50), type_prestataire VARCHAR(50), email VARCHAR(100), telephone VARCHAR(20))
+    Clé primaire : id_prestataire
+    type_prestataire doit être parmi : 'DJ', 'Traiteur', 'Photographe', 'Vidéaste', 'Fleuriste', 'Animateur', 'Musicien', 'Décorateur', 'Autre'
+
+MARIAGE (id_mariage INT, date_mariage DATE, budget DECIMAL(10,2), statut VARCHAR(50), #id_lieu, #id_client)
+    Clé primaire : id_mariage
+    Clés étrangères : id_lieu références LIEU(id_lieu), id_client références CLIENT(id_client)
+    statut doit être parmi : 'prévu', 'en cours', 'terminé', 'annulé'
+    budget doit être > 0
+    date_mariage doit être >= la date d'aujourd'hui
+
+CRENEAU (id_creneau INT, heure_debut TIME, heure_fin TIME, #id_mariage)
+    Clé primaire : id_creneau
+    Clé étrangère : id_mariage références MARIAGE(id_mariage)
+    heure_fin doit être strictement après heure_debut
+
+INVITE (id_invite INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(100), telephone VARCHAR(20), rsvp VARCHAR(50), #id_invite_1*, #id_mariage)
+    Clé primaire : id_invite
+    Clés étrangères : id_invite_1 références INVITE(id_invite) (peut être NULL), id_mariage références MARIAGE(id_mariage)
+    rsvp doit être parmi : 'confirmé', 'refusé', 'en attente'
+
+affecter (#id_mariage, #id_prestataire, cout_negocie DECIMAL(10,2))
+    Clé primaire composée : (id_mariage, id_prestataire)
+    Clés étrangères : id_mariage références MARIAGE(id_mariage), id_prestataire références PRESTATAIRE(id_prestataire)
+    cout_negocie doit être >= 0
+
+planifier (#id_mariage, #id_prestataire, #id_creneau, description VARCHAR(150))
+    Clé primaire composée : (id_mariage, id_prestataire, id_creneau)
+    Clés étrangères : id_mariage références MARIAGE(id_mariage), id_prestataire références PRESTATAIRE(id_prestataire), id_creneau références CRENEAU(id_creneau)
+
+Les clés primaires correspondent aux id, sauf si autre chose est précisé (quand c'est un attribut composé).
+Les clés étrangères sont identifiées par les #, et ont le même nom que les clés primaires auxquelles elles font référence.
+
+Nombre de lignes souhaitées :
+- CLIENT : 10 lignes
+- LIEU : 8 lignes
+- PRESTATAIRE : 12 lignes
+- MARIAGE : 15 lignes
+- CRENEAU : 20 lignes (au moins 2 créneaux par mariage)
+- INVITE : 40 lignes (au moins 2 invités par mariage, certains avec un accompagnant)
+- affecter : 20 lignes
+- planifier : 15 lignes
+
+Les clés étrangères doivent faire référence aux clés primaires existantes : donne les lignes en commençant par remplir les tables dans lesquelles il n'y a pas de clés étrangères, puis les tables dans lesquelles les clés étrangères font références à des clés primaires des tables déjà remplies.
+
+Les données doivent être réalistes et françaises (noms, prénoms, adresses, emails français).
+
+Fournis l'ensemble sous la forme d'un script SQL prêt à être exécuté.
