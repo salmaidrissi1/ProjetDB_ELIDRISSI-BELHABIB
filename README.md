@@ -76,7 +76,7 @@ Le tableau suivant présente le dictionnaire de données du système Wedding Pla
 | CLIENT      | nom              | Nom du client                               | Texte   | 50     |
 | CLIENT      | prenom           | Prénom du client                            | Texte   | 50     |
 | CLIENT      | email            | Adresse email du client                     | Texte   | 100    |
-| CLIENT      | telephone        | Numéro de téléphone du client               | Texte   | 20     |
+| CLIENT      | telephone        | Numéro de téléphone du client               | Entier  | 11     |
 | MARIAGE     | id_mariage       | Identifiant unique du mariage               | Entier  | 11     |
 | MARIAGE     | date_mariage     | Date du mariage                             | Date    | —      |
 | MARIAGE     | budget           | Budget du mariage                           | Décimal | 10,2   |
