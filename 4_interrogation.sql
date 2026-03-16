@@ -216,7 +216,7 @@ AND id_lieu <> 6;
 -- Q23 : Mariages dont le budget dépasse AU MOINS UN mariage du lieu 1 (ANY)
 -- Sophie évalue les mariages comparables au lieu le plus prestigieux.
 SELECT id_mariage, date_mariage, budget
-FROM MARIAGE
+FROM MARIAGE 
 WHERE budget > ANY (
     SELECT budget FROM MARIAGE WHERE id_lieu = 1
 )
