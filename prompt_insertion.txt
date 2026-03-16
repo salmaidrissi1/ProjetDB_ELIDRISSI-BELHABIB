@@ -5,7 +5,7 @@ CLIENT (id_client INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(100), 
 
 LIEU (id_lieu INT, nom_lieu VARCHAR(50), adresse VARCHAR(50), capacite INT, prix_location DECIMAL(10,2))
     Clé primaire : id_lieu
-
+   
 PRESTATAIRE (id_prestataire INT, nom VARCHAR(50), type_prestataire VARCHAR(50), email VARCHAR(100), telephone VARCHAR(20))
     Clé primaire : id_prestataire
     type_prestataire doit être parmi : 'DJ', 'Traiteur', 'Photographe', 'Vidéaste', 'Fleuriste', 'Animateur', 'Musicien', 'Décorateur', 'Autre'
