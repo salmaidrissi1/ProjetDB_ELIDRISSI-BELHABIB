@@ -168,9 +168,8 @@ Invite = (id_invite INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50),
 
 affecter = (#id_mariage, #id_prestataire, cout_negocie DECIMAL(10,2));
 
-planifier = (#id_creneau, description VARCHAR(50), #id_mariage, #id_prestataire);
+planifier = (#id_prestataire, #id_mariage, description VARCHAR(50), #id_creneau);
 
-![MCD](mld.png)
 
 
 
