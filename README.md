@@ -80,7 +80,7 @@ Le tableau suivant présente le dictionnaire de données du système Wedding Pla
 | MARIAGE     | id_mariage       | Identifiant unique du mariage               | Entier  | 11     |
 | MARIAGE     | date_mariage     | Date du mariage                             | Date    | —      |
 | MARIAGE     | budget           | Budget du mariage                           | Décimal | 10,2   |
-| MARIAGE     | statut           | Statut du mariage (prévu, terminé, etc.)    | Texte   | 20     |
+| MARIAGE     | statut           | Statut du mariage (prévu, terminé, etc.)    | Texte   | 50     |
 | LIEU        | id_lieu          | Identifiant unique du lieu                  | Entier  | 11     |
 | LIEU        | nom_lieu         | Nom du lieu                                 | Texte   | 100    |
 | LIEU        | adresse          | Adresse du lieu                             | Texte   | 150    |
@@ -90,13 +90,13 @@ Le tableau suivant présente le dictionnaire de données du système Wedding Pla
 | PRESTATAIRE | nom              | Nom du prestataire                          | Texte   | 100    |
 | PRESTATAIRE | type_prestataire | Type de prestation (DJ, traiteur, etc.)     | Texte   | 50     |
 | PRESTATAIRE | email            | Adresse email du prestataire                | Texte   | 100    |
-| PRESTATAIRE | telephone        | Numéro de téléphone du prestataire          | Texte   | 20     |
+| PRESTATAIRE | telephone        | Numéro de téléphone du prestataire          | Entier   | 20     |
 | INVITE      | id_invite        | Identifiant unique de l’invité              | Entier  | 11     |
 | INVITE      | nom              | Nom de l’invité                             | Texte   | 50     |
 | INVITE      | prenom           | Prénom de l’invité                          | Texte   | 50     |
 | INVITE      | email            | Adresse email de l’invité                   | Texte   | 100    |
-| INVITE      | telephone        | Numéro de téléphone de l’invité             | Texte   | 20     |
-| INVITE      | rsvp             | Statut de confirmation de présence          | Texte   | 20     |
+| INVITE      | telephone        | Numéro de téléphone de l’invité             | Entier   | 20     |
+| INVITE      | rsvp             | Statut de confirmation de présence          | Texte   | 50     |
 | CRENEAU     | id_creneau       | Identifiant unique du créneau               | Entier  | 11     |
 | CRENEAU     | heure_debut      | Heure de début du créneau                   | Heure   | —      |
 | CRENEAU     | heure_fin        | Heure de fin du créneau                     | Heure   | —      |
@@ -154,22 +154,23 @@ Troisième étape : MLD et MPD
 
 3) A. MLD
 
-client = (id_client INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50), telephone INT);
+CLIENT = (id_client INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50), telephone INT);
 
-Lieu = (id_lieu INT, nom_lieu VARCHAR(50), adresse VARCHAR(50), capacite INT, prix_location DECIMAL(15,2));
+LIEU = (id_lieu INT, nom_lieu VARCHAR(50), adresse VARCHAR(50), capacite INT, prix_location DECIMAL(10,2));
 
-Prestataire = (id_prestataire INT, email VARCHAR(50), telephone INT, nom VARCHAR(50), type_prestataire VARCHAR(50));
+PRESTATAIRE = (id_prestataire INT, nom VARCHAR(50), type_prestataire VARCHAR(50), email VARCHAR(50), telephone INT);
 
-Creneau = (id_creneau INT, heure_debut TIME, heure_fin TIME); 
+MARIAGE = (id_mariage INT, date_mariage DATE, budget DECIMAL(10,2), statut VARCHAR(50), #id_lieu, #id_client);
 
-Mariage = (id_mariage INT, date_mariage DATE, budget DECIMAL(15,2), statut VARCHAR(50), #id_lieu, #id_client);
+CRENEAU = (id_creneau INT, heure_debut TIME, heure_fin TIME, #id_mariage);
 
-Invite = (id_invite INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50), telephone INT, rsvp VARCHAR(50), #id_invite_1*, #id_mariage);
+INVITE = (id_invite INT, nom VARCHAR(50), prenom VARCHAR(50), email VARCHAR(50), telephone INT, rsvp VARCHAR(50), #id_invite_1*, #id_mariage);
 
 affecter = (#id_mariage, #id_prestataire, cout_negocie DECIMAL(10,2));
 
-planifier = (#id_prestataire, #id_mariage, description VARCHAR(50), #id_creneau);
+planifier = (#id_mariage, #id_prestataire, #id_creneau, description VARCHAR(150));
 
+![MCD](mldprojet.png)
 
 
 
