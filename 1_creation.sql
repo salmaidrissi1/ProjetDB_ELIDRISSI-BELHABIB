@@ -92,25 +92,18 @@ CREATE TABLE affecter(
 );
 
 CREATE TABLE planifier(
+   id_mariage INT,
+   id_prestataire INT,
    id_creneau INT,
    description VARCHAR(50),
-   id_mariage INT NOT NULL,
-   id_prestataire INT NOT NULL,
-   
-   PRIMARY KEY(id_creneau, id_mariage, id_prestataire),
-
-   FOREIGN KEY(id_creneau)
-   REFERENCES Creneau(id_creneau)
-   ON DELETE CASCADE
-   ON UPDATE CASCADE,
-
-   FOREIGN KEY(id_mariage)
-   REFERENCES Mariage(id_mariage)
-   ON DELETE CASCADE
-   ON UPDATE CASCADE,
-
-   FOREIGN KEY(id_prestataire)
-   REFERENCES Prestataire(id_prestataire)
-   ON DELETE CASCADE
-   ON UPDATE CASCADE
+   PRIMARY KEY(id_mariage, id_prestataire),
+   FOREIGN KEY(id_mariage) REFERENCES Mariage(id_mariage)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE,
+   FOREIGN KEY(id_prestataire) REFERENCES Prestataire(id_prestataire)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE,
+   FOREIGN KEY(id_creneau) REFERENCES Creneau(id_creneau)
+      ON DELETE SET NULL
+      ON UPDATE CASCADE
 );
