@@ -1,75 +1,76 @@
-/* ===== Contraintes sur les mariages ===== */
- 
-ALTER TABLE Mariage
-ADD CONSTRAINT chk_budget
-CHECK (budget >= 0);
+-- ============================================================
+-- 2_contraintes.sql
+-- Wedding Planner — Contraintes de validation (règles métier)
+-- ============================================================
 
-ALTER TABLE Mariage 
-ADD CONSTRAINT chk_statut
-CHECK (statut IN ('prévu','en cours','terminé','annulé'));
+-- ------------------------------------------------------------
+-- CLIENT : email au format valide (contient @ et .)
+-- ------------------------------------------------------------
+ALTER TABLE CLIENT
+    ADD CONSTRAINT chk_client_email
+    CHECK (email LIKE '%@%.%');
 
+-- ------------------------------------------------------------
+-- LIEU : capacité strictement positive
+-- ------------------------------------------------------------
+ALTER TABLE LIEU
+    ADD CONSTRAINT chk_lieu_capacite
+    CHECK (capacite > 0);
 
-/* ===== Contraintes sur les lieux ===== */
+-- ------------------------------------------------------------
+-- LIEU : prix de location non négatif
+-- ------------------------------------------------------------
+ALTER TABLE LIEU
+    ADD CONSTRAINT chk_lieu_prix
+    CHECK (prix_location >= 0);
 
-ALTER TABLE Lieu
-ADD CONSTRAINT chk_capacite
-CHECK (capacite > 0);
+-- ------------------------------------------------------------
+-- PRESTATAIRE : email au format valide
+-- ------------------------------------------------------------
+ALTER TABLE PRESTATAIRE
+    ADD CONSTRAINT chk_prestataire_email
+    CHECK (email LIKE '%@%.%');
 
+-- ------------------------------------------------------------
+-- PRESTATAIRE : type de prestation parmi une liste définie
+-- ------------------------------------------------------------
+ALTER TABLE PRESTATAIRE
+    ADD CONSTRAINT chk_prestataire_type
+    CHECK (type_prestataire IN ('DJ', 'Traiteur', 'Photographe',
+                                'Vidéaste', 'Fleuriste', 'Animateur',
+                                'Musicien', 'Décorateur', 'Autre'));
 
-ALTER TABLE Lieu
-ADD CONSTRAINT chk_prix_location
-CHECK (prix_location >= 0);
+-- ------------------------------------------------------------
+-- MARIAGE : budget strictement positif
+-- ------------------------------------------------------------
+ALTER TABLE MARIAGE
+    ADD CONSTRAINT chk_mariage_budget
+    CHECK (budget > 0);
 
+-- ------------------------------------------------------------
+-- MARIAGE : statut parmi les valeurs autorisées
+-- ------------------------------------------------------------
+ALTER TABLE MARIAGE
+    ADD CONSTRAINT chk_mariage_statut
+    CHECK (statut IN ('prévu', 'en cours', 'terminé', 'annulé'));
 
-/* ===== Contraintes sur les créneaux horaires ===== */
+-- ------------------------------------------------------------
+-- CRENEAU : heure_fin strictement après heure_debut
+-- ------------------------------------------------------------
+ALTER TABLE CRENEAU
+    ADD CONSTRAINT chk_creneau_heures
+    CHECK (heure_fin > heure_debut);
 
-ALTER TABLE Creneau
-ADD CONSTRAINT chk_heure
-CHECK (heure_fin > heure_debut);
-  
+-- ------------------------------------------------------------
+-- INVITE : statut RSVP parmi les valeurs autorisées
+-- ------------------------------------------------------------
+ALTER TABLE INVITE
+    ADD CONSTRAINT chk_invite_rsvp
+    CHECK (rsvp IN ('confirmé', 'refusé', 'en attente'));
 
-/* ===== Contraintes RSVP pour les invités ===== */
-
-ALTER TABLE Invite
-ADD CONSTRAINT chk_rsvp
-CHECK (rsvp IN ('confirme','refuse','en attente'));
-
-
-/* ===== Contraintes sur les emails ===== */
-
-ALTER TABLE Client
-ADD CONSTRAINT unique_email_client
-UNIQUE (email);
-
-ALTER TABLE Prestataire
-ADD CONSTRAINT unique_email_prestataire
-UNIQUE (email);
-
-
-/* ===== Contraintes sur les téléphones ===== */
-
-ALTER TABLE Client
-ADD CONSTRAINT chk_tel_client
-CHECK (telephone > 0);
-
-ALTER TABLE Prestataire
-ADD CONSTRAINT chk_tel_prestataire
-CHECK (telephone > 0);
- 
-ALTER TABLE Invite
-ADD CONSTRAINT chk_tel_invite
-CHECK (telephone > 0);
-
-
-/* ===== Contraintes sur les types de prestataires ===== */
-
-ALTER TABLE Prestataire
-ADD CONSTRAINT chk_type_prestataire
-CHECK (type_prestataire IN ('DJ','traiteur','photographe','decorateur','animateur'));
-
-
-/* ===== Contraintes sur les coûts négociés ===== */
-
+-- ------------------------------------------------------------
+-- AFFECTER : coût négocié non négatif
+-- ------------------------------------------------------------
 ALTER TABLE affecter
-ADD CONSTRAINT chk_cout_negocie
-CHECK (cout_negocie >= 0);
+    ADD CONSTRAINT chk_affecter_cout
+    CHECK (cout_negocie >= 0);
