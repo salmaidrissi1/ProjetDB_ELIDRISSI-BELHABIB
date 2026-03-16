@@ -8,7 +8,7 @@
 -- Sophie consulte l'annuaire complet des clients de l'agence.
 SELECT nom, prenom, email, telephone
 FROM CLIENT
-ORDER BY nom ASC, prenom ASC;
+ORDER BY nom ASC, prenom ASC; 
 
 -- Q2 : Mariages avec un budget compris entre 15 000 et 25 000 €
 -- Sophie filtre les mariages de gamme intermédiaire pour un rapport budgétaire.
